@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Long Weekend</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="findLongWeekend">Find Long Weekend</string>
+    <string name="yourDate">2013-09-12</string>
+    <string name="holidaysFrom">Holidays From</string>
+    <string name="startDate">2012-01-01</string>
+    <string name="endDate">2012-08-12</string>
+    <string name="holidaysBetween">Holidays Between</string>
+
+</resources>
