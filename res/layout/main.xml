@@ -9,65 +9,28 @@
     tools:context=".MainActivity" >
 
     <Button
-        android:id="@+id/longweekendButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/yourDate"
-        android:layout_below="@+id/yourDate"
-        android:text="@string/findLongWeekend" />
-
-    <EditText
-        android:id="@+id/yourDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginRight="33dp"
-        android:layout_marginTop="50dp"
-        android:ems="10"
-        android:inputType="date"
-        android:text="@string/yourDate" />
-
-    <EditText
-        android:id="@+id/startDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/longweekendButton"
-        android:layout_below="@+id/longweekendButton"
-        android:layout_marginTop="35dp"
-        android:ems="10"
-        android:inputType="date"
-        android:text="@string/startDate" />
-
-    <EditText
-        android:id="@+id/endDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/startDate"
-        android:layout_below="@+id/startDate"
-        android:layout_marginTop="19dp"
-        android:ems="10"
-        android:inputType="date"
-        android:text="@string/endDate" >
-    </EditText>
-
-    <Button
         android:id="@+id/holidaysFromButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/endDate"
-        android:layout_marginRight="34dp"
-        android:layout_marginTop="23dp"
+        android:layout_below="@+id/longweekendButton"
+        android:layout_centerHorizontal="true"
         android:text="@string/holidaysFrom" />
 
     <Button
         android:id="@+id/holidaysBetweenButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/endDate"
+        android:layout_alignRight="@+id/holidaysFromButton"
         android:layout_below="@+id/holidaysFromButton"
-        android:layout_marginTop="16dp"
         android:text="@string/holidaysBetween" />
+
+    <Button
+        android:id="@+id/longweekendButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/holidaysFromButton"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="16dp"
+        android:text="@string/longWeekend" />
 
 </RelativeLayout>

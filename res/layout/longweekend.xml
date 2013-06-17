@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -6,14 +6,39 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity" >
+    tools:context=".LongWeekend" >
 
-    <TextView
-        android:id="@+id/dates"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+     <TextView
+         android:id="@+id/longweekendMessage"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_centerHorizontal="true"
+         android:layout_marginTop="20dp"
+         android:text="@string/longweekendMessage"
+         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    
+     <Button
+         android:id="@+id/findLongweekendButton"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignRight="@+id/longweekendMessage"
+         android:layout_below="@+id/yourDate"
+         android:layout_marginRight="24dp"
+         android:layout_marginTop="70dp"
+         android:text="@string/longWeekend" />
 
-</LinearLayout>
+     <EditText
+         android:id="@+id/yourDate"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignRight="@+id/findLongweekendButton"
+         android:layout_below="@+id/longweekendMessage"
+         android:layout_marginTop="22dp"
+         android:ems="10"
+         android:inputType="date"
+         android:text="@string/yourDate" >
+
+         <requestFocus />
+     </EditText>
+
+</RelativeLayout>

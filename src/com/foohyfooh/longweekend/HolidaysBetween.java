@@ -1,6 +1,5 @@
 package com.foohyfooh.longweekend;
 
-
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -12,19 +11,21 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
+public class HolidaysBetween extends Activity implements OnClickListener {
 
-public class LongWeekend extends Activity implements OnClickListener {
-
-	private EditText yourDate;
-	private Button findLongWeekend;
+	
+	private EditText startDate, endDate;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.longweekend);
-		yourDate = (EditText) findViewById(R.id.yourDate);
-		findLongWeekend = (Button) findViewById(R.id.findLongweekendButton);
-		findLongWeekend.setOnClickListener(this);
+		setContentView(R.layout.holidaysbetween);
+		startDate = (EditText) findViewById(R.id.startDate);
+		endDate = (EditText) findViewById(R.id.endDate);
+		Button findHolidaysBetween = (Button) findViewById(R.id.findHolidaysBetween);
+		findHolidaysBetween.setOnClickListener(this);
 	}
+	
+	
 	
 	@Override
 	public void onClick(View v) {
@@ -34,8 +35,9 @@ public class LongWeekend extends Activity implements OnClickListener {
 			Bundle bundle = new Bundle();
 			List<Data> daysList;
 			//Test Date
-			//"http://192.168.1.4:8084/longweekend/LongWeekend?yourDate=2013-09-12"
-			String request = String.format("http://192.168.1.4:8084/longweekend/LongWeekend?startDate=%s", yourDate.getText().toString());
+			//http://192.168.1.4:8084/longweekend/HolidaysBetween?startDate=2012-01-01&endDate=2012-08-12
+			String request = String.format("http://192.168.1.4:8084/longweekend/HolidaysBetween?startDate=%s&endDate=%s", 
+					startDate.getText().toString(), endDate.getText().toString());
 			daysList = new GetJSON().execute(request).get();
 			String[] daysArray = new String[daysList.size()];
 			for(int count = 0; count < daysList.size(); count++){
@@ -53,4 +55,5 @@ public class LongWeekend extends Activity implements OnClickListener {
 		}
 	}
 	
+
 }

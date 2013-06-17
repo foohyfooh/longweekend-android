@@ -1,6 +1,5 @@
 package com.foohyfooh.longweekend;
 
-
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -12,30 +11,29 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
+public class HolidaysFrom extends Activity implements OnClickListener {
 
-public class LongWeekend extends Activity implements OnClickListener {
-
-	private EditText yourDate;
-	private Button findLongWeekend;
+	private EditText startDate;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.longweekend);
-		yourDate = (EditText) findViewById(R.id.yourDate);
-		findLongWeekend = (Button) findViewById(R.id.findLongweekendButton);
-		findLongWeekend.setOnClickListener(this);
+		setContentView(R.layout.holidaysfrom);
+		startDate = (EditText) findViewById(R.id.beginDate);
+		Button findHolidaysFrom = (Button) findViewById(R.id.findHolidaysFrom);
+		findHolidaysFrom.setOnClickListener(this);
 	}
-	
+
+
 	@Override
-	public void onClick(View v) {
+	public void onClick(View v) {	
 		try{
 			Class<?> name = Class.forName("com.foohyfooh.longweekend.Display");
 			Intent intent = new Intent(this, name);
 			Bundle bundle = new Bundle();
 			List<Data> daysList;
 			//Test Date
-			//"http://192.168.1.4:8084/longweekend/LongWeekend?yourDate=2013-09-12"
-			String request = String.format("http://192.168.1.4:8084/longweekend/LongWeekend?startDate=%s", yourDate.getText().toString());
+			//http://192.168.1.4:8084/longweekend/HolidaysFrom?startDate=2012-11-11
+			String request = String.format("http://192.168.1.4:8084/longweekend/HolidaysFrom?startDate=%s", startDate.getText().toString());
 			daysList = new GetJSON().execute(request).get();
 			String[] daysArray = new String[daysList.size()];
 			for(int count = 0; count < daysList.size(); count++){
@@ -53,4 +51,5 @@ public class LongWeekend extends Activity implements OnClickListener {
 		}
 	}
 	
+
 }

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/startHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/startDate"
+        android:layout_alignBottom="@+id/startDate"
+        android:layout_toLeftOf="@+id/startDate"
+        android:text="@string/startDateMessage"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/endHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/endDate"
+        android:layout_alignRight="@+id/startHint"
+        android:text="@string/endDateMessage"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/findHolidaysBetween"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="56dp"
+        android:text="@string/holidaysBetween" />
+
+    <EditText
+        android:id="@+id/endDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/findHolidaysBetween"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="17dp"
+        android:ems="10"
+        android:inputType="date"
+        android:text="@string/endDate" />
+
+    <EditText
+        android:id="@+id/startDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/endDate"
+        android:layout_alignParentRight="true"
+        android:ems="10"
+        android:inputType="date"
+        android:text="@string/startDate" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/holidaysbetweenMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="15dp"
+        android:text="@string/holidaysbetweenMessage"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+</RelativeLayout>
