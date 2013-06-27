@@ -1,0 +1,10 @@
+#Files types to ignore
+*.ap_
+*.dex
+*.class
+*.store
+
+#Folders to ignore
+apk
+
+workspace.xml
