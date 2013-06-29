@@ -30,7 +30,6 @@ public class HolidaysFrom extends Activity implements OnClickListener {
 			Class<?> name = Class.forName("com.foohyfooh.longweekend.Display");
 			Intent intent = new Intent(this, name);
 			Bundle bundle = new Bundle();
-			List<String> daysList;
 			//Test Date
 			//http://10.0.2.2:8084/longweekend/HolidaysFrom?startDate=2012-11-11
 			String request = String.format("http://10.0.2.2:8084/longweekend/HolidaysFrom?startDate=%s", startDate.getText().toString());

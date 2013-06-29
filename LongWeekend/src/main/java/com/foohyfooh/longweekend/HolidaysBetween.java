@@ -33,7 +33,6 @@ public class HolidaysBetween extends Activity implements OnClickListener {
 			Class<?> name = Class.forName("com.foohyfooh.longweekend.Display");
 			Intent intent = new Intent(this, name);
 			Bundle bundle = new Bundle();
-			List<String> daysList;
 			//Test Date
 			//http://10.0.2.2:8084/longweekend/HolidaysBetween?startDate=2012-01-01&endDate=2012-08-12
 			String request = String.format("http://10.0.2.2:8084/longweekend/HolidaysBetween?startDate=%s&endDate=%s",

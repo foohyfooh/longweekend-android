@@ -3,6 +3,7 @@
 *.dex
 *.class
 *.store
+*.bin
 
 #Folders to ignore
 apk
