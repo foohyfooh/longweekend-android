@@ -1,62 +1,74 @@
 package com.foohyfooh.longweekend;
 
-
-import android.app.Activity;
-import android.content.Intent;
+import android.app.ActionBar;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 
-public class MainActivity extends Activity implements OnClickListener {
 
-	
-	private Button longWeekend, holidaysFrom, holidaysBetween;
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main);
-		longWeekend = (Button) findViewById(R.id.longweekendButton);
-		holidaysFrom = (Button) findViewById(R.id.holidaysFromButton);
-		holidaysBetween = (Button) findViewById(R.id.holidaysBetweenButton);
-		longWeekend.setOnClickListener(this);
-		holidaysFrom.setOnClickListener(this);
-		holidaysBetween.setOnClickListener(this);
-	}
+public class MainActivity extends FragmentActivity implements ActionBar.TabListener {
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
-	}
+    private ViewPager viewPager;
 
-	
-	
-	@Override
-	public void onClick(View v) {
-		try{
-			Class<?> name = null;
-			switch(v.getId()){
-				case R.id.longweekendButton:
-					name = Class.forName("com.foohyfooh.longweekend.LongWeekend");
-					break;
-				case R.id.holidaysFromButton:
-					name = Class.forName("com.foohyfooh.longweekend.HolidaysFrom");
-					break;
-				case R.id.holidaysBetweenButton:
-					name = Class.forName("com.foohyfooh.longweekend.HolidaysBetween");
-					break;
-			}
-			Intent intent = new Intent(this, name);
-			startActivity(intent);
-		}catch(ClassNotFoundException  e){
-			
-		}
-	}
-	
-	
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
 
-	
+        Fragment[] fragments = {new LongWeekend(), new HolidaysFrom(), new HolidaysBetween(), new About()};
+        String[] fragmentTitles = {"Long Weekend", "Holidays From", "Holidays Between", "About"};
+        AppSectionsPagerAdapter appSectionsPagerAdapter = new AppSectionsPagerAdapter(getSupportFragmentManager(), fragments);
+        final ActionBar actionBar = getActionBar();
+        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+        viewPager = (ViewPager) findViewById(R.id.pager);
+        viewPager.setAdapter(appSectionsPagerAdapter);
+        viewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+            @Override
+            public void onPageSelected(int position) {
+                actionBar.setSelectedNavigationItem(position);
+            }
+        });
+        for(int i = 0; i  < fragments.length; i++){
+            actionBar.addTab(actionBar.newTab().setText(fragmentTitles[i]).setTabListener(this));
+        }
+    }
+
+    @Override
+    public void onTabSelected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
+        viewPager.setCurrentItem(tab.getPosition());
+    }
+
+    @Override
+    public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
+    }
+
+    @Override
+    public void onTabReselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
+    }
+
+
+    private class AppSectionsPagerAdapter extends FragmentPagerAdapter {
+
+
+        private final Fragment[] fragments;
+
+        public AppSectionsPagerAdapter(FragmentManager fragmentManager, Fragment[] fragments){
+            super(fragmentManager);
+            this.fragments = fragments;
+        }
+
+        @Override
+        public Fragment getItem(int i) {
+            return i < fragments.length ? fragments[i] : null;
+        }
+
+        @Override
+        public int getCount() {
+            return fragments.length;
+        }
+    }
 }

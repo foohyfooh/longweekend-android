@@ -13,22 +13,23 @@
             android:id="@+id/longweekendMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="11dp"
             android:text="@string/longweekendMessage"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:clickable="false"
             android:layout_alignParentTop="true"
-            android:layout_alignLeft="@+id/yourDate"/>
+            android:layout_alignLeft="@+id/longweekendOptionsGroup"/>
 
     <TextView
             android:id="@+id/yourDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/longweekendMessage"
-            android:layout_marginTop="22dp"
+            android:layout_marginTop="11dp"
             android:ems="10"
             android:text="@string/yourDate"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_below="@+id/longweekendMessage"
+            android:layout_alignRight="@+id/longweekendOptionsGroup"/>
 
     <RadioGroup
             android:id="@+id/longweekendOptionsGroup"
@@ -66,5 +67,14 @@
             android:layout_alignParentRight="true"
             android:layout_below="@+id/longweekendOptionsGroup"
             android:text="@string/longWeekend" />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/yourDateHint"
+            android:id="@+id/textView"
+            android:layout_above="@+id/longweekendOptionsGroup"
+            android:layout_toLeftOf="@+id/yourDate"/>
 
 </RelativeLayout>

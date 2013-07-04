@@ -3,37 +3,35 @@ package com.foohyfooh.longweekend;
 
 import java.util.concurrent.ExecutionException;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class HolidaysBetween extends Activity implements OnClickListener {
+public class HolidaysBetween extends Fragment implements OnClickListener {
 
-	
 	private TextView startDate, endDate;
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.holidaysbetween);
-		startDate = (TextView) findViewById(R.id.startDate);
-		endDate = (TextView) findViewById(R.id.endDate);
-		Button findHolidaysBetween = (Button) findViewById(R.id.findHolidaysBetween);
-		findHolidaysBetween.setOnClickListener(this);
-        startDate.setOnClickListener(new DatePickerFragment(this, startDate));
-        endDate.setOnClickListener(new DatePickerFragment(this, endDate));
-	}
-	
-	
-	
-	@Override
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        super.onCreateView(inflater, container, savedInstanceState);
+        View rootView = inflater.inflate(R.layout.holidaysbetween, container, false);
+        startDate = (TextView) rootView.findViewById(R.id.startDate);
+        endDate = (TextView) rootView.findViewById(R.id.endDate);
+        rootView.findViewById(R.id.findHolidaysBetween).setOnClickListener(this);
+        startDate.setOnClickListener(new DatePickerFragment(getActivity(), startDate));
+        endDate.setOnClickListener(new DatePickerFragment(getActivity(), endDate));
+        return rootView;
+    }
+
+    @Override
 	public void onClick(View v) {
 		try{
-			Class<?> name = Class.forName("com.foohyfooh.longweekend.Display");
-			Intent intent = new Intent(this, name);
+			Intent intent = new Intent(getActivity(), Display.getDisplay());
 			Bundle bundle = new Bundle();
 			//Test Date
 			//http://10.0.2.2:8084/longweekend/HolidaysBetween?startDate=2012-01-01&endDate=2012-08-12

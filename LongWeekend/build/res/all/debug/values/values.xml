@@ -8,8 +8,7 @@
     <string name="app_name">Long Weekend</string>
     <string name="beginDate">2012-11-11</string>
     <string name="endDate">2012-08-12</string>
-    <string name="endDateMessage">End Date:</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="endDateHint">End Date:</string>
     <string name="holidayfromMessage">Click the date and pick the appropriate date from the dialog. Then click the button to get the holidays from the specified date</string>
     <string name="holidaysBetween">Get Holidays Between</string>
     <string name="holidaysFrom">Get Holidays From</string>
@@ -20,8 +19,9 @@
     <string name="longweekendBoth">Get the Long Weekends Before and After the Date</string>
     <string name="longweekendMessage">Click the date and pick the appropriate date from the dialog. Then click the button to desire long weekend</string>
     <string name="startDate">2012-01-01</string>
-    <string name="startDateMessage">Start Date:</string>
+    <string name="startDateHint">Start Date:</string>
     <string name="yourDate">2013-09-12</string>
+    <string name="yourDateHint">Date:</string>
 
     <style name="AppBaseTheme" parent="android:Theme.Light">
         <!--

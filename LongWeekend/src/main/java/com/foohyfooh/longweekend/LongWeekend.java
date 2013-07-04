@@ -1,40 +1,41 @@
 package com.foohyfooh.longweekend;
 
-import java.util.GregorianCalendar;
 import java.util.concurrent.ExecutionException;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
 
-public class LongWeekend extends Activity implements OnClickListener {
+public class LongWeekend extends Fragment implements OnClickListener {
 
     private TextView yourDate;
     private RadioGroup radioGroup;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.longweekend);
-        yourDate = (TextView) findViewById(R.id.yourDate);
-        //yourDate.setText(currentDate());
-        Button findLongWeekend = (Button) findViewById(R.id.findLongweekendButton);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        super.onCreateView(inflater, container, savedInstanceState);
+        View rootView = inflater.inflate(R.layout.longweekend, container, false);
+        yourDate = (TextView) rootView.findViewById(R.id.yourDate);
+        //yourDate.setText(Utils.currentDate());
+        Button findLongWeekend = (Button) rootView.findViewById(R.id.findLongweekendButton);
         findLongWeekend.setOnClickListener(this);
-        yourDate.setOnClickListener(new DatePickerFragment(this, yourDate));
-        radioGroup = (RadioGroup) findViewById(R.id.longweekendOptionsGroup);
+        yourDate.setOnClickListener(new DatePickerFragment(getActivity(), yourDate));
+        radioGroup = (RadioGroup) rootView.findViewById(R.id.longweekendOptionsGroup);
+        return rootView;
     }
 
     @Override
     public void onClick(View v) {
         try{
-            Class<?> name = Class.forName("com.foohyfooh.longweekend.Display");
-            Intent intent = new Intent(this, name);
+            Intent intent = new Intent(getActivity(), Display.getDisplay());
             Bundle bundle = new Bundle();
             String[] request = null;
             //Test Dates
@@ -46,7 +47,7 @@ public class LongWeekend extends Activity implements OnClickListener {
                 case R.id.longweekendBefore:
                     request = new String[]{
                         String.format("http://10.0.2.2:8084/longweekend/LongWeekendBefore?startDate=%s&endDate=%s",
-                                currentDate(), yourDate.getText().toString())
+                                Utils.currentDate(), yourDate.getText().toString())
                     };
                     break;
                 case R.id.longweekendAfter:
@@ -58,7 +59,7 @@ public class LongWeekend extends Activity implements OnClickListener {
                 case R.id.longweekendBoth:
                     request = new String[] {
                         String.format("http://10.0.2.2:8084/longweekend/LongWeekendBefore?startDate=%s&endDate=%s",
-                                currentDate(), yourDate.getText().toString()),
+                                Utils.currentDate(), yourDate.getText().toString()),
                         String.format("http://10.0.2.2:8084/longweekend/LongWeekendAfter?startDate=%s&endDate=%s",
                                 yourDate.getText().toString(), "2013-12-31")
                     };
@@ -75,14 +76,6 @@ public class LongWeekend extends Activity implements OnClickListener {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
-    }
-
-    private String currentDate(){
-        final GregorianCalendar cal = (GregorianCalendar) GregorianCalendar.getInstance();
-        int day = cal.get(GregorianCalendar.DAY_OF_MONTH);
-        int month = cal.get(GregorianCalendar.MONTH) + 1;//Months are 0 indexed
-        int year = cal.get(GregorianCalendar.YEAR);
-        return String.format("%d-%02d-%02d", year, month, day);
     }
 
 }

@@ -1,10 +1,10 @@
 package com.foohyfooh.longweekend;
 
-import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.os.Bundle;
-import android.app.DialogFragment;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.TextView;
@@ -14,10 +14,10 @@ import java.util.GregorianCalendar;
 
 public class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener, View.OnClickListener {
 
-    private final Activity activity;
+    private final FragmentActivity activity;
     private final TextView textView;
 
-    public DatePickerFragment(Activity activity, TextView textView) {
+    public DatePickerFragment(FragmentActivity activity, TextView textView) {
         this.activity = activity;
         this.textView = textView;
     }
@@ -25,7 +25,7 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
     @Override
     public void onClick(View view) {
         DialogFragment newFragment = new DatePickerFragment(activity,textView);
-        newFragment.show(activity.getFragmentManager(), "datePicker");
+        newFragment.show(activity.getSupportFragmentManager(), "datePicker");
     }
 
     @Override

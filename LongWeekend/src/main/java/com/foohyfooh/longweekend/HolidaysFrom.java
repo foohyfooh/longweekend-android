@@ -2,33 +2,33 @@ package com.foohyfooh.longweekend;
 
 import java.util.concurrent.ExecutionException;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class HolidaysFrom extends Activity implements OnClickListener {
+public class HolidaysFrom extends Fragment implements OnClickListener {
 
 	private TextView startDate;
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.holidaysfrom);
-		startDate = (TextView) findViewById(R.id.beginDate);
-		Button findHolidaysFrom = (Button) findViewById(R.id.findHolidaysFrom);
-		findHolidaysFrom.setOnClickListener(this);
-        startDate.setOnClickListener(new DatePickerFragment(this, startDate));
-	}
 
+	@Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.holidaysfrom, container, false);
+        startDate = (TextView) rootView.findViewById(R.id.beginDate);
+        //startDate.setText(Utils.currentDate());
+        rootView.findViewById(R.id.findHolidaysFrom).setOnClickListener(this);
+        startDate.setOnClickListener(new DatePickerFragment(getActivity(), startDate));
+        return rootView;
+	}
 
 	@Override
 	public void onClick(View v) {	
 		try{
-			Class<?> name = Class.forName("com.foohyfooh.longweekend.Display");
-			Intent intent = new Intent(this, name);
+			Intent intent = new Intent(getActivity(), Display.getDisplay());
 			Bundle bundle = new Bundle();
 			//Test Date
 			//http://10.0.2.2:8084/longweekend/HolidaysFrom?startDate=2012-11-11

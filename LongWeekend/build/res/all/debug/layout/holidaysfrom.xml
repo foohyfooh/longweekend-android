@@ -17,10 +17,10 @@
         android:layout_alignParentRight="true"/>
 
     <TextView
-        android:id="@+id/startHint"
+        android:id="@+id/beginHint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/startDateMessage"
+        android:text="@string/startDateHint"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_above="@+id/findHolidaysFrom"
         android:layout_toLeftOf="@+id/beginDate"/>

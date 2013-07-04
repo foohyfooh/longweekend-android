@@ -9,7 +9,7 @@
         android:id="@+id/startHint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/startDateMessage"
+        android:text="@string/startDateHint"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_marginTop="12dp"
         android:layout_below="@+id/holidaysbetweenMessage"
@@ -19,7 +19,7 @@
         android:id="@+id/endHint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/endDateMessage"
+        android:text="@string/endDateHint"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_below="@+id/startDate"
         android:layout_toLeftOf="@+id/endDate"/>

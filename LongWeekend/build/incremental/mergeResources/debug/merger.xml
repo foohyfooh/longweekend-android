@@ -69,6 +69,10 @@
                 </string>
                 <string name="holidaysbetweenMessage" >Click the date and pick the appropriate date from the dialog. Then click the button to get the holidays between the specified dates
                 </string>
+                <string name="yourDateHint" >Date:
+                </string>
+                <string name="endDateHint" >End Date:
+                </string>
                 <string name="longweekendBoth" >Get the Long Weekends Before and After the Date
                 </string>
                 <string name="beginDate" >2012-11-11
@@ -89,7 +93,11 @@
                 </string>
                 <string name="holidaysBetween" >Get Holidays Between
                 </string>
+                <string name="startDateHint" >Start Date:
+                </string>
                 <string name="app_name" >Long Weekend
+                </string>
+                <string name="title_activity_about" >About
                 </string>
                 <string name="hello_world" >Hello world!
                 </string>
@@ -149,6 +157,21 @@
                     <!-- API 14 theme customizations can go here. -->
                 </style>
             </file>
+            <file
+                name="maintabs"
+                path="C:\Users\User\Documents\Projects\GitHub\longweekend-android\LongWeekend\src\main\res\layout\maintabs.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="about"
+                path="C:\Users\User\Documents\Projects\GitHub\longweekend-android\LongWeekend\src\main\res\menu\about.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                name="about"
+                path="C:\Users\User\Documents\Projects\GitHub\longweekend-android\LongWeekend\src\main\res\layout\about.xml"
+                qualifiers=""
+                type="layout" />
         </source>
         <source path="C:\Users\User\Documents\Projects\GitHub\longweekend-android\LongWeekend\build\res\rs\debug" />
     </dataSet>
