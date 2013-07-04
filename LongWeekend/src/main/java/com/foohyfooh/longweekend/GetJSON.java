@@ -24,7 +24,7 @@ public class GetJSON extends AsyncTask<String, Void, String[]> {
             List list = new ArrayList<String>();
             RequestThread[] threads = new RequestThread[params.length];
             ExecutorService threadExecutor = Executors.newCachedThreadPool();
-            for(int i = 0; i < params.length;i++){
+            for(int i = 0; i < threads.length;i++){
                 threads[i] = new RequestThread(params[i]);
                 threadExecutor.execute(threads[i]);
             }
@@ -44,21 +44,21 @@ public class GetJSON extends AsyncTask<String, Void, String[]> {
 
     private class RequestThread implements Runnable{
 
-        private final String param;
+        private final String link;
         private List<String> list = new ArrayList<String>();
 
         public RequestThread(String param){
-            this.param = param;
+            link = param;
         }
 
         public List<String> getList(){
-            return  list;
+            return list;
         }
 
         @Override
         public void run() {
             try{
-                URL url = new URL(param);
+                URL url = new URL(link);
                 String json = IOUtils.toString(url.openStream());
                 JSONArray jsonArray = new JSONArray(json);
                 for(int count = 0; count < jsonArray.length(); count++){

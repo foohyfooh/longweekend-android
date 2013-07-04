@@ -1,45 +1,50 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    tools:context=".HolidaysFrom" >
 
-    <EditText
+    <TextView
         android:id="@+id/beginDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="21dp"
         android:ems="10"
-        android:inputType="date"
-        android:text="@string/beginDate" />
+        android:text="@string/beginDate"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_below="@+id/holidaysfromMessage"
+        android:layout_alignParentRight="true"/>
 
     <TextView
         android:id="@+id/startHint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/beginDate"
-        android:layout_toLeftOf="@+id/beginDate"
         android:text="@string/startDateMessage"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_above="@+id/findHolidaysFrom"
+        android:layout_toLeftOf="@+id/beginDate"/>
 
     <Button
         android:id="@+id/findHolidaysFrom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/holidaysFrom"
         android:layout_below="@+id/beginDate"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="28dp"
-        android:text="@string/holidaysFrom" />
+        android:layout_centerHorizontal="true"/>
 
     <TextView
         android:id="@+id/holidaysfromMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="15dp"
         android:text="@string/holidayfromMessage"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
 
 </RelativeLayout>

@@ -2,13 +2,13 @@
 # format is <lastModified> <length> <SHA-1> <path>
 # Encoding is UTF-8
 1372443794555 1480 4c2198d715952e9e99b5e3b7bdf384cd6cf2cf6e C:\Users\User\Documents\Projects\GitHub\longweekend-android\LongWeekend\build\res\all\debug\layout\main.xml
-1372443794555 2588 90a3a4caebbcca9862ad6e5c777e29d04e9f823f C:\Users\User\Documents\Projects\GitHub\longweekend-android\LongWeekend\build\res\all\debug\layout\holidaysbetween.xml
+1372892630900 2691 8c3436e655e3d6e3bbc9a1481548a019f3a4e05a C:\Users\User\Documents\Projects\GitHub\longweekend-android\LongWeekend\build\res\all\debug\layout\holidaysbetween.xml
 1372443794559 210 c41731f5631a90fa989588ef97e9476fc244b438 C:\Users\User\Documents\Projects\GitHub\longweekend-android\LongWeekend\build\res\all\debug\values-v11\values.xml
-1372443794555 2823 bc4e7fa24fc20f10c209557848f3d54d779a0af6 C:\Users\User\Documents\Projects\GitHub\longweekend-android\LongWeekend\build\res\all\debug\layout\longweekend.xml
+1372892759532 2810 5be1b2a4dade7d45fdd30a2d2fe0f39d79c31b1f C:\Users\User\Documents\Projects\GitHub\longweekend-android\LongWeekend\build\res\all\debug\layout\longweekend.xml
 1372443794553 12329 a8301606e15d4b6dccdd775cc273cfc51a552645 C:\Users\User\Documents\Projects\GitHub\longweekend-android\LongWeekend\build\res\all\debug\drawable-xhdpi\ic_launcher.png
 1372443794554 7721 39b0f5a0570da92f471225402ad0ea6de30bf2be C:\Users\User\Documents\Projects\GitHub\longweekend-android\LongWeekend\build\res\all\debug\drawable-hdpi\ic_launcher.png
-1372443794555 1709 04bc3f394d3b80892e5e8399b71e1f494e5ff5fc C:\Users\User\Documents\Projects\GitHub\longweekend-android\LongWeekend\build\res\all\debug\layout\holidaysfrom.xml
-1372443794556 2024 4df4f1f57c55509d013dcf00ff3a4250c7383e83 C:\Users\User\Documents\Projects\GitHub\longweekend-android\LongWeekend\build\res\all\debug\values\values.xml
+1372892759531 1988 27a01363d35a4765bcffd9f99989ba60a2aae68b C:\Users\User\Documents\Projects\GitHub\longweekend-android\LongWeekend\build\res\all\debug\layout\holidaysfrom.xml
+1372886464007 2072 611352768ce3106d2bea27da6e9e71fd4eedd245 C:\Users\User\Documents\Projects\GitHub\longweekend-android\LongWeekend\build\res\all\debug\values\values.xml
 1372443794560 130 90e37035f35f83953c491e73e930b7aea297a472 C:\Users\User\Documents\Projects\GitHub\longweekend-android\LongWeekend\build\res\all\debug\values-sw720dp-land\values.xml
 1372443794555 24654 696bbbc63d2250ef7d3373f2d602e604acd13d8c C:\Users\User\Documents\Projects\GitHub\longweekend-android\LongWeekend\build\res\all\debug\drawable-xxhdpi\ic_launcher.png
 1372443794554 3769 eec07752d40e268ed7f4a1730acc77ab1e40aeb0 C:\Users\User\Documents\Projects\GitHub\longweekend-android\LongWeekend\build\res\all\debug\drawable-mdpi\ic_launcher.png

@@ -10,12 +10,12 @@
     <string name="holidaysBetween">Get Holidays Between</string>
     <string name="startDate">2012-01-01</string>
     <string name="endDate">2012-08-12</string>
-    <string name="longweekendMessage">Enter a date in the format YYYY-MM-DD and click the button to get the closest long weekend to this date</string>
+    <string name="longweekendMessage">Click the date and pick the appropriate date from the dialog. Then click the button to desire long weekend</string>
     <string name="startDateMessage">Start Date:</string>
     <string name="endDateMessage">End Date:</string>
     <string name="beginDate">2012-11-11</string>
-    <string name="holidayfromMessage">Enter the date in the format YYYY-MM-DD and click the button to get the holidays from the specified date</string>
-    <string name="holidaysbetweenMessage">Enter the dates in the format YYYY-MM-DD and click the button to get the holidays between the specified dates</string>
+    <string name="holidayfromMessage">Click the date and pick the appropriate date from the dialog. Then click the button to get the holidays from the specified date</string>
+    <string name="holidaysbetweenMessage">Click the date and pick the appropriate date from the dialog. Then click the button to get the holidays between the specified dates</string>
     <string name="longweekendBefore">Get Long Weekends Before the Date</string>
     <string name="longweeekendAfter">Get Long Weekends After the Date</string>
     <string name="longweekendBoth">Get the Long Weekends Before and After the Date</string>

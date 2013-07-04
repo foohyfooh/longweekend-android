@@ -1,6 +1,6 @@
 package com.foohyfooh.longweekend;
 
-import java.util.List;
+
 import java.util.concurrent.ExecutionException;
 
 import android.app.Activity;
@@ -9,20 +9,22 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.TextView;
 
 public class HolidaysBetween extends Activity implements OnClickListener {
 
 	
-	private EditText startDate, endDate;
+	private TextView startDate, endDate;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.holidaysbetween);
-		startDate = (EditText) findViewById(R.id.startDate);
-		endDate = (EditText) findViewById(R.id.endDate);
+		startDate = (TextView) findViewById(R.id.startDate);
+		endDate = (TextView) findViewById(R.id.endDate);
 		Button findHolidaysBetween = (Button) findViewById(R.id.findHolidaysBetween);
 		findHolidaysBetween.setOnClickListener(this);
+        startDate.setOnClickListener(new DatePickerFragment(this, startDate));
+        endDate.setOnClickListener(new DatePickerFragment(this, endDate));
 	}
 	
 	

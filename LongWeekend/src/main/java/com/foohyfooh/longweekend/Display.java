@@ -11,8 +11,6 @@ public class Display extends ListActivity {
 		super.onCreate(savedInstanceState);
 		String[] list = getIntent().getStringArrayExtra("longWeekend");
 		setListAdapter(new ArrayAdapter<String>(Display.this, android.R.layout.simple_list_item_1, list));
-	}
-	
-	
+    }
 
 }

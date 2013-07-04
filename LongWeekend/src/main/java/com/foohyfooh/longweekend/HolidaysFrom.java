@@ -1,6 +1,5 @@
 package com.foohyfooh.longweekend;
 
-import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 import android.app.Activity;
@@ -9,18 +8,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.TextView;
 
 public class HolidaysFrom extends Activity implements OnClickListener {
 
-	private EditText startDate;
+	private TextView startDate;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.holidaysfrom);
-		startDate = (EditText) findViewById(R.id.beginDate);
+		startDate = (TextView) findViewById(R.id.beginDate);
 		Button findHolidaysFrom = (Button) findViewById(R.id.findHolidaysFrom);
 		findHolidaysFrom.setOnClickListener(this);
+        startDate.setOnClickListener(new DatePickerFragment(this, startDate));
 	}
 
 
@@ -45,6 +45,6 @@ public class HolidaysFrom extends Activity implements OnClickListener {
 			e.printStackTrace();
 		}
 	}
-	
+
 
 }

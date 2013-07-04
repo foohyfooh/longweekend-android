@@ -4,29 +4,29 @@ import java.util.GregorianCalendar;
 import java.util.concurrent.ExecutionException;
 
 import android.app.Activity;
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.DatePicker;
-import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 
 public class LongWeekend extends Activity implements OnClickListener {
 
-    private EditText yourDate;
+    private TextView yourDate;
     private RadioGroup radioGroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.longweekend);
-        yourDate = (EditText) findViewById(R.id.yourDate);
+        yourDate = (TextView) findViewById(R.id.yourDate);
+        //yourDate.setText(currentDate());
         Button findLongWeekend = (Button) findViewById(R.id.findLongweekendButton);
         findLongWeekend.setOnClickListener(this);
+        yourDate.setOnClickListener(new DatePickerFragment(this, yourDate));
         radioGroup = (RadioGroup) findViewById(R.id.longweekendOptionsGroup);
     }
 
@@ -78,7 +78,7 @@ public class LongWeekend extends Activity implements OnClickListener {
     }
 
     private String currentDate(){
-        GregorianCalendar cal = (GregorianCalendar) GregorianCalendar.getInstance();
+        final GregorianCalendar cal = (GregorianCalendar) GregorianCalendar.getInstance();
         int day = cal.get(GregorianCalendar.DAY_OF_MONTH);
         int month = cal.get(GregorianCalendar.MONTH) + 1;//Months are 0 indexed
         int year = cal.get(GregorianCalendar.YEAR);
