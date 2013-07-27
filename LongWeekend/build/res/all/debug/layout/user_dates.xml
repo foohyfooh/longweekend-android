@@ -1,0 +1,101 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".UserDates">
+
+    <ListView
+            android:layout_width="fill_parent"
+            android:layout_height="200dp"
+            android:id="@+id/user_dates_custom_dates"
+            android:layout_alignParentTop="true"
+            />
+
+    <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/user_dates_custom_dates"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="13dp">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Date: "
+                android:layout_gravity="center_horizontal|top"
+                android:id="@+id/user_dates_date_hint"
+                android:layout_above="@+id/user_dates_name"
+                android:layout_alignParentLeft="true"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/user_dates_date"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_alignParentTop="true"
+                android:layout_alignLeft="@+id/user_dates_name"
+                android:layout_alignRight="@+id/user_dates_name"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Name: "
+                android:layout_gravity="center"
+                android:id="@+id/user_dates_name_hint"
+                android:layout_alignBottom="@+id/user_dates_name"
+                android:layout_alignParentLeft="true"/>
+
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/user_dates_name"
+                android:singleLine="false"
+                android:hint="Enter a Name"
+                android:layout_below="@+id/user_dates_date"
+                android:layout_alignLeft="@+id/user_dates_desc"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Description: "
+                android:id="@+id/user_dates_desc_hint"
+                android:layout_alignBaseline="@+id/user_dates_desc"
+                android:layout_alignBottom="@+id/user_dates_desc"
+                android:layout_alignParentLeft="true"/>
+
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/user_dates_desc"
+                android:hint="Enter a Description"
+                android:layout_below="@+id/user_dates_name"
+                android:layout_alignParentRight="true"/>
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Custom Date"
+                android:id="@+id/user_dates_add"
+                android:layout_below="@+id/user_dates_desc"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="14dp"/>
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delete All"
+                android:id="@+id/user_dates_delete"
+                android:layout_alignTop="@+id/user_dates_add"
+                android:layout_toRightOf="@+id/user_dates_add"/>
+    </RelativeLayout>
+</RelativeLayout>
+<!-- From: file:/C:/Users/User/Documents/Projects/GitHub/longweekend-android/LongWeekend/src/main/res/layout/user_dates.xml -->

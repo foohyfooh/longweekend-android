@@ -49,6 +49,11 @@
                 qualifiers=""
                 type="layout" />
             <file
+                name="user_dates"
+                path="C:\Users\User\Documents\Projects\GitHub\longweekend-android\LongWeekend\src\main\res\layout\user_dates.xml"
+                qualifiers=""
+                type="layout" />
+            <file
                 name="about"
                 path="C:\Users\User\Documents\Projects\GitHub\longweekend-android\LongWeekend\src\main\res\menu\about.xml"
                 qualifiers=""
@@ -153,11 +158,6 @@
                     <!-- API 14 theme customizations can go here. -->
                 </style>
             </file>
-            <file
-                name="user_dates"
-                path="C:\Users\User\Documents\Projects\GitHub\longweekend-android\LongWeekend\src\main\res\menu\user_dates.xml"
-                qualifiers=""
-                type="menu" />
         </source>
         <source path="C:\Users\User\Documents\Projects\GitHub\longweekend-android\LongWeekend\build\res\rs\debug" />
     </dataSet>

@@ -18,8 +18,8 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        Fragment[] fragments = {new LongWeekend(), new HolidaysFrom(), new HolidaysBetween(), new About()};
-        String[] fragmentTitles = {"Long Weekend", "Holidays From", "Holidays Between", "About"};
+        Fragment[] fragments = {new LongWeekend(), new HolidaysFrom(), new HolidaysBetween(), new UserDates(), new About()};
+        String[] fragmentTitles = {"Long Weekend", "Holidays From", "Holidays Between", "Custom Dates", "About"};
         AppSectionsPagerAdapter appSectionsPagerAdapter = new AppSectionsPagerAdapter(getSupportFragmentManager(), fragments);
         final ActionBar actionBar = getActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
