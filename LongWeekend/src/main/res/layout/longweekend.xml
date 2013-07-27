@@ -26,7 +26,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="11dp"
             android:ems="10"
-            android:text="@string/yourDate"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_below="@+id/longweekendMessage"
             android:layout_alignRight="@+id/longweekendOptionsGroup"/>

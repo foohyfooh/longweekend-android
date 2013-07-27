@@ -12,9 +12,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="This applications is meant to be used to find long weekends in Trinidad"
+            android:text="@string/about_info"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"/>
 </RelativeLayout>
+<!-- From: file:/C:/Users/User/Documents/Projects/GitHub/longweekend-android/LongWeekend/src/main/res/layout/about.xml -->

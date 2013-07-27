@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Display"
+            android:name="com.foohyfooh.longweekend.Display"
             android:label="@string/app_name" >
         </activity>
     </application>

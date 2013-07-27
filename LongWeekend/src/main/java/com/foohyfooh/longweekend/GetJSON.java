@@ -15,9 +15,26 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.os.AsyncTask;
 
 public class GetJSON extends AsyncTask<String, Void, String[]> {
+
+    private ProgressDialog progressDialog;
+
+    public GetJSON(Context context){
+        progressDialog = new ProgressDialog(context);
+        progressDialog.setTitle("Loading...");
+        progressDialog.setMessage("Getting Results...");
+    }
+
+
+    @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+        progressDialog.show();
+    }
 
     protected String[] doInBackground(String... params) {
         try{
@@ -31,7 +48,7 @@ public class GetJSON extends AsyncTask<String, Void, String[]> {
             threadExecutor.shutdown();
             boolean ended = threadExecutor.awaitTermination(40, TimeUnit.SECONDS);
             if(ended) for (RequestThread thread : threads)
-                //Produces a list of all the holidays obtained from the requests
+                //Produces a single list of all the holidays obtained from the requests
                 //This also deals with duplicate lists
                 list =  ListUtils.sum(list, thread.getList());
             return  (String[])list.toArray(new String[list.size()]);
@@ -40,7 +57,15 @@ public class GetJSON extends AsyncTask<String, Void, String[]> {
         }catch(IndexOutOfBoundsException e){
             return null;
         }
+
     }
+
+    @Override
+    protected void onPostExecute(String[] strings) {
+        super.onPostExecute(strings);
+        progressDialog.dismiss();
+    }
+
 
     private class RequestThread implements Runnable{
 

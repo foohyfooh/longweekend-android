@@ -21,7 +21,9 @@ public class HolidaysBetween extends Fragment implements OnClickListener {
         super.onCreateView(inflater, container, savedInstanceState);
         View rootView = inflater.inflate(R.layout.holidaysbetween, container, false);
         startDate = (TextView) rootView.findViewById(R.id.startDate);
+        startDate.setText(Utils.currentDate());
         endDate = (TextView) rootView.findViewById(R.id.endDate);
+        endDate.setText(Utils.yearEnd());
         rootView.findViewById(R.id.findHolidaysBetween).setOnClickListener(this);
         startDate.setOnClickListener(new DatePickerFragment(getActivity(), startDate));
         endDate.setOnClickListener(new DatePickerFragment(getActivity(), endDate));
@@ -37,7 +39,7 @@ public class HolidaysBetween extends Fragment implements OnClickListener {
 			//http://10.0.2.2:8084/longweekend/HolidaysBetween?startDate=2012-01-01&endDate=2012-08-12
 			String request = String.format("http://10.0.2.2:8084/longweekend/HolidaysBetween?startDate=%s&endDate=%s",
 					startDate.getText().toString(), endDate.getText().toString());
-            String[] daysArray = new GetJSON().execute(request).get();
+            String[] daysArray = new GetJSON(getActivity()).execute(request).get();
 			bundle.putStringArray("longWeekend", daysArray);
 			intent.putExtras(bundle);
 			startActivity(intent);

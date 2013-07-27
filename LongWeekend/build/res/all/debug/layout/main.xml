@@ -4,4 +4,4 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent" /><!-- From: file:/C:/Users/User/Documents/Projects/GitHub/longweekend-android/LongWeekend/src/main/res/layout/main.xml -->

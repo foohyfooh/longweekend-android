@@ -19,7 +19,7 @@ public class HolidaysFrom extends Fragment implements OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.holidaysfrom, container, false);
         startDate = (TextView) rootView.findViewById(R.id.beginDate);
-        //startDate.setText(Utils.currentDate());
+        startDate.setText(Utils.currentDate());
         rootView.findViewById(R.id.findHolidaysFrom).setOnClickListener(this);
         startDate.setOnClickListener(new DatePickerFragment(getActivity(), startDate));
         return rootView;
@@ -33,7 +33,7 @@ public class HolidaysFrom extends Fragment implements OnClickListener {
 			//Test Date
 			//http://10.0.2.2:8084/longweekend/HolidaysFrom?startDate=2012-11-11
 			String request = String.format("http://10.0.2.2:8084/longweekend/HolidaysFrom?startDate=%s", startDate.getText().toString());
-			String[] daysArray = new GetJSON().execute(request).get();
+			String[] daysArray = new GetJSON(getActivity()).execute(request).get();
 			bundle.putStringArray("longWeekend", daysArray);
 			intent.putExtras(bundle);
 			startActivity(intent);

@@ -39,7 +39,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:text="@string/endDate"
         android:layout_alignBottom="@+id/endHint"
         android:layout_alignLeft="@+id/findHolidaysBetween"
         android:textAppearance="?android:attr/textAppearanceMedium"/>
@@ -49,7 +48,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:text="@string/startDate"
         android:layout_alignBottom="@+id/startHint"
         android:layout_alignLeft="@+id/endDate"
         android:textAppearance="?android:attr/textAppearanceMedium"/>
@@ -65,4 +63,4 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"/>
 
-</RelativeLayout>
+</RelativeLayout><!-- From: file:/C:/Users/User/Documents/Projects/GitHub/longweekend-android/LongWeekend/src/main/res/layout/holidaysbetween.xml -->
