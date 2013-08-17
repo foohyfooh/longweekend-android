@@ -128,9 +128,6 @@
                 </style>
             </file>
             <file
-                path="C:\Users\User\Documents\Projects\GitHub\longweekend-android\LongWeekend\src\main\res\values-sw600dp\dimens.xml"
-                qualifiers="sw600dp" />
-            <file
                 path="C:\Users\User\Documents\Projects\GitHub\longweekend-android\LongWeekend\src\main\res\values-sw720dp-land\dimens.xml"
                 qualifiers="sw720dp-land" >
                 <dimen name="activity_horizontal_margin" >128dp

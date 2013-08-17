@@ -5,15 +5,12 @@ import java.util.concurrent.ExecutionException;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 public class LongWeekend extends Fragment implements OnClickListener {
@@ -30,8 +27,7 @@ public class LongWeekend extends Fragment implements OnClickListener {
         View rootView = inflater.inflate(R.layout.longweekend, container, false);
         yourDate = (TextView) rootView.findViewById(R.id.yourDate);
         yourDate.setText(Utils.currentDate());
-        Button findLongWeekend = (Button) rootView.findViewById(R.id.findLongweekendButton);
-        findLongWeekend.setOnClickListener(this);
+        rootView.findViewById(R.id.findLongweekendButton).setOnClickListener(this);
         yourDate.setOnClickListener(new DatePickerFragment(getActivity(), yourDate));
         radioGroup = (RadioGroup) rootView.findViewById(R.id.longweekendOptionsGroup);
         return rootView;
@@ -52,22 +48,22 @@ public class LongWeekend extends Fragment implements OnClickListener {
             switch(radioGroup.getCheckedRadioButtonId()){
                 case R.id.longweekendBefore:
                     request = new String[]{
-                        String.format(longWeekendRequest,
-                                Utils.yearBegin(), yourDate.getText().toString(), LONG_WEEKEND_BEFORE).concat(userDates)
+                        String.format(longWeekendRequest, Utils.yearBegin(), yourDate.getText().toString(),
+                                LONG_WEEKEND_BEFORE).concat(userDates)
                     };
                     break;
                 case R.id.longweekendAfter:
                     request = new String[]{
-                        String.format(longWeekendRequest,
-                        yourDate.getText().toString(), Utils.yearEnd(), LONG_WEEKEND_AFTER).concat(userDates)
+                        String.format(longWeekendRequest, yourDate.getText().toString(), Utils.yearEnd(),
+                                LONG_WEEKEND_AFTER).concat(userDates)
                     };
                     break;
                 case R.id.longweekendBoth:
                     request = new String[] {
-                        String.format(longWeekendRequest,
-                                Utils.yearBegin(), yourDate.getText().toString(), LONG_WEEKEND_BEFORE).concat(userDates),
-                        String.format(longWeekendRequest,
-                                yourDate.getText().toString(), Utils.yearEnd(), LONG_WEEKEND_AFTER).concat(userDates)
+                        String.format(longWeekendRequest, Utils.yearBegin(), yourDate.getText().toString(),
+                                LONG_WEEKEND_BEFORE).concat(userDates),
+                        String.format(longWeekendRequest, yourDate.getText().toString(), Utils.yearEnd(),
+                                LONG_WEEKEND_AFTER).concat(userDates)
                     };
                     break;
             }

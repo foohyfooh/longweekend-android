@@ -88,7 +88,7 @@ public class GetJSON extends AsyncTask<String, Void, String[]> {
                 JSONArray jsonArray = new JSONArray(json);
                 for(int count = 0; count < jsonArray.length(); count++){
                     JSONObject jsonObject = jsonArray.getJSONObject(count);
-                    String value = String.format("Holiday: %s Date: %s Desc: %s\n", jsonObject.getString("holidayName"),
+                    String value = String.format("Holiday: %s Date: %s Desc: %s", jsonObject.getString("holidayName"),
                             jsonObject.getString("holidayDate"), jsonObject.getString("holidayDesc"));
                     list.add(value);
                 }

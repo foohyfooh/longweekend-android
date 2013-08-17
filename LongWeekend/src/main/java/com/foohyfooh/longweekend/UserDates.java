@@ -27,7 +27,7 @@ public class UserDates extends Fragment implements View.OnClickListener {
     private ArrayAdapter<String> adapter;
     private TextView date;
     private EditText name, desc;
-    private SharedPreferences preferences;
+    private static SharedPreferences preferences;
     private static final String preference_location = "user_dates";
 
     @Override
@@ -65,7 +65,7 @@ public class UserDates extends Fragment implements View.OnClickListener {
     }
 
     public static String getList(FragmentActivity fragmentActivity){
-        SharedPreferences preferences = fragmentActivity.getSharedPreferences(preference_location, Context.MODE_PRIVATE);
+        preferences = fragmentActivity.getSharedPreferences(preference_location, Context.MODE_PRIVATE);
         ArrayList<String> values = new ArrayList(preferences.getAll().values());
         JSONArray jsonArray = new JSONArray();
         for(String value: values){
@@ -106,5 +106,4 @@ public class UserDates extends Fragment implements View.OnClickListener {
                 break;
         }
     }
-
 }

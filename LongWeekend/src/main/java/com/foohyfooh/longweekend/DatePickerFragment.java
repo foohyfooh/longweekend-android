@@ -24,8 +24,7 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
 
     @Override
     public void onClick(View view) {
-        DialogFragment newFragment = new DatePickerFragment(activity,textView);
-        newFragment.show(activity.getSupportFragmentManager(), "datePicker");
+        show(activity.getSupportFragmentManager(), "datePicker");
     }
 
     @Override
