@@ -93,7 +93,7 @@ public class UserDates extends Fragment implements View.OnClickListener {
                 }
 
                 allDates.add(String.format("Name:%s Date:%s Desc:%s", nameValue, dateValue, descValue));
-                String newDate = String.format("{name:%s, date:%s, desc:%s}",nameValue, dateValue, descValue);
+                String newDate = String.format("{\"name\":\"%s\", \"date\":\"%s\", \"desc\":\"%s\"}", nameValue, dateValue, descValue);
                 editor.putString(dateValue, newDate);
                 editor.commit();
                 adapter.notifyDataSetChanged();
