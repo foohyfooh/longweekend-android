@@ -2,6 +2,7 @@ package com.foohyfooh.longweekend;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -52,7 +53,7 @@ public class UserDates extends Fragment implements View.OnClickListener {
         allDates = new ArrayList<String>();
         for(String value: values){
             try {
-                JSONObject jsonObject = new JSONObject(value);
+                JSONObject jsonObject = new JSONObject(Uri.decode(value));
                 String nameValue = jsonObject.getString("name");
                 String dateValue = jsonObject.getString("date");
                 String descValue = jsonObject.getString("desc");
@@ -93,7 +94,8 @@ public class UserDates extends Fragment implements View.OnClickListener {
                 }
 
                 allDates.add(String.format("Name:%s Date:%s Desc:%s", nameValue, dateValue, descValue));
-                String newDate = String.format("{\"name\":\"%s\", \"date\":\"%s\", \"desc\":\"%s\"}", nameValue, dateValue, descValue);
+                String newDate = String.format("{\"name\":\"%s\", \"date\":\"%s\", \"desc\":\"%s\"}",
+                            Uri.encode(nameValue), dateValue, Uri.encode(descValue));
                 editor.putString(dateValue, newDate);
                 editor.commit();
                 adapter.notifyDataSetChanged();
