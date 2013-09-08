@@ -13,8 +13,4 @@ public class Display extends ListActivity {
 		setListAdapter(new ArrayAdapter<String>(Display.this, android.R.layout.simple_list_item_1, list));
     }
 
-    public static Class<?> getDisplay() throws ClassNotFoundException {
-        return Class.forName("com.foohyfooh.longweekend.Display");
-    }
-
 }

@@ -27,7 +27,7 @@ public class HolidaysFrom extends Fragment implements View.OnClickListener {
 	@Override
 	public void onClick(View v) {	
 		try{
-			Intent intent = new Intent(getActivity(), Display.getDisplay());
+			Intent intent = new Intent(getActivity(), Display.class);
 			Bundle bundle = new Bundle();
 			//Test Date
 			//http://10.0.2.2:8084/longweekend/HolidaysFrom?startDate=2012-11-11
@@ -36,8 +36,6 @@ public class HolidaysFrom extends Fragment implements View.OnClickListener {
 			bundle.putStringArray("longWeekend", daysArray);
 			intent.putExtras(bundle);
 			startActivity(intent);
-		}catch(ClassNotFoundException e){
-			e.printStackTrace();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} catch (ExecutionException e) {

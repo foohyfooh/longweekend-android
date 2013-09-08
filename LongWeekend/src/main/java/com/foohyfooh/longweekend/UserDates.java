@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -21,7 +22,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class UserDates extends Fragment implements View.OnClickListener {
+public class UserDates extends Fragment implements View.OnClickListener, AdapterView.OnItemLongClickListener {
 
     private ListView dates;
     private ArrayList<String> allDates;
@@ -35,8 +36,8 @@ public class UserDates extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.user_dates, container, false);
         dates = (ListView) rootView.findViewById(R.id.user_dates_custom_dates);
+        dates.setOnItemLongClickListener(this);
         setList();
-        dates.setAdapter(adapter);
         date = (TextView) rootView.findViewById(R.id.user_dates_date);
         date.setText(Utils.currentDate());
         date.setOnClickListener(new DatePickerFragment(getActivity(), date));
@@ -63,6 +64,7 @@ public class UserDates extends Fragment implements View.OnClickListener {
             }
         }
         adapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1, allDates);
+        dates.setAdapter(adapter);
     }
 
     public static String getList(FragmentActivity fragmentActivity){
@@ -107,5 +109,22 @@ public class UserDates extends Fragment implements View.OnClickListener {
                 adapter.notifyDataSetChanged();
                 break;
         }
+    }
+
+    @Override
+    public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+        ArrayList<String> values = new ArrayList(preferences.getAll().values());
+        SharedPreferences.Editor editor = preferences.edit();
+        String toDelete = Uri.decode(values.get(i));
+         try {
+             String dateValue = new JSONObject(toDelete).getString("date");
+             editor.remove(dateValue);
+             allDates.remove(i);
+             editor.commit();
+             adapter.notifyDataSetChanged();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return true;
     }
 }

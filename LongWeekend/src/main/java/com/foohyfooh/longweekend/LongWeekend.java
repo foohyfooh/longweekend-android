@@ -35,7 +35,7 @@ public class LongWeekend extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         try{
-            Intent intent = new Intent(getActivity(), Display.getDisplay());
+            Intent intent = new Intent(getActivity(), Display.class);
             Bundle bundle = new Bundle();
             String[] request = null;
             String longWeekendRequest = "http://10.0.2.2:8084/longweekend/LongWeekend?startDate=%s&endDate=%s&selector=%d";
@@ -70,8 +70,6 @@ public class LongWeekend extends Fragment implements View.OnClickListener {
             bundle.putStringArray("longWeekend", daysArray);
             intent.putExtras(bundle);
             startActivity(intent);
-        }catch(ClassNotFoundException e) {
-            e.printStackTrace();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
